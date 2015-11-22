@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog | Rentshak Camp</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <!-- Bootstrap theme -->
+    <link href="assets/css/bootstrap-theme.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/theme.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    
+<!-- Fixed navbar -->
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="dist/index.html">Rentshak Camp</a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <!-- you can exclude pages using {{#isnt}} helper: {{#isnt data.title 'Blog'}} -->
+        
+        <li class="active">
+          <a href="index.html">Blog</a>
+        </li>
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Github <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="https://github.com/assemble/assemble">Assemble</a></li>
+            <li><a href="https://github.com/assemble/generator-assemble">Generator Assemble</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-header">Plugins</li>
+            <li><a href="https://github.com/assemble/assemble-contrib-anchors">assemble-contrib-anchors</a></li>
+            <li><a href="https://github.com/assemble/assemble-contrib-permalinks">assemble-contrib-permalinks</a></li>
+            <li><a href="https://github.com/assemble/assemble-contrib-sitemap">assemble-contrib-sitemap</a></li>
+            <li><a href="https://github.com/assemble/assemble-contrib-toc">assemble-contrib-toc</a></li>
+            
+          </ul>
+        </li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+
+
+    <div class="container theme-showcase" role="main">
+
+      
+<h1>Posts</h1>
+
+  <h1 id="presentation-layer-front-end-development-roles">Presentation Layer (Front-End) Development Roles</h1>
+<blockquote>
+<p>There are a number of distinct roles in this paradigm. I&#39;ve tried to break them apart as best I can with sweet titles. This may be updated as time goes by, or you may update it as well. We&#39;re versioned so DGAF. <em>If you&#39;re on the master branch you will need to create your own.</em></p>
+</blockquote>
+<p><em>New branches can be nested by simply creating them at a sublocation such as jefrfranklin/develop. Benefit is that all of your branches can be nested together. Often used to group bugfixes, features, and change-requests across large teams.</em></p>
+<p><em>Awessembler</em>:
+    |    The person in charge of HTML, templating, and sitemap creation
+    |    Recommending <em>Assemble.io</em> (comes with <em>Handlebars Helpers</em> plus it&#39;s awesome)
+    |    Look into <em>grunt-assemble-sitemap</em>
+    |    <em>Yaml Front Matter (YFM)</em> - like <em>JSON</em> but way easier. It&#39;ll take 10 minutes to learn.</p>
+<p><em>Interaction Hero</em>:
+    |    The person whose researches, designs, and maintains effective call to action (CTA) and form elements
+    |    In essence, you would puts yourself in the &quot;users&#39; shoes&quot; and think about what makes sense in term of navigation and guiding user input
+    |    Collaborates with the <em>APICON</em> on connecting <em>Javascript</em> and <em>AngularJS</em> front and back matter
+    |    Works to ensure that <em>user input is sanitized upon submit and not directly reflected back to user thereby creating an XSS attack vector</em></p>
+<p><em>Sassmeister</em>:
+    |     The master of all @imports Sass and our main CSS architect
+    |     Ensures subtle and processor-friendly animations
+    |     Ensures @media queries work correctly
+    |     Maintains global variables and functions
+    |     Responsible for a majority of the responsive design (RD) aspect
+    |     Works with the <em>Interaction Hero</em> to make sure RD is fully covered with <em>Javascript</em> when required</p>
+<p><em>APICON</em>:
+    |    Creates and maintains <em>Angular</em> <code>service</code>s (API connectivity) for Rentshak DBs and third party services (Google Maps, Yelp, etc.)
+    |    Works with the <em>Interaction Hero</em> to make sure that the presentation layer (PL) that the user sees is <code>get</code>ting the correct data objects
+    |    Works with the <em>Data Dynamo</em> to make sure the <code>post</code>s from the PL are validated and correct</p>
+<p><em>Data Dynamo</em>:
+    |    Maintains <em>Parse.io</em> DBaaS and associated stored procedures (SP) that aggregate data based on abstract API requests (e.g. GetShopInfo() -&gt; SP uses <code>GUID</code>s to <code>JOIN</code> appropriate tables and spits out <em>only</em> necessary data)
+    |    Continuously (automated or manually) stress tests DB SPs to discover programmatic bottlenecks and processes of greatest concern in regards to speed and always-on reliability of DB calls
+    |    Works with <em>APICON</em> to ensure <em>SQL Injection</em> security holes are patched via encoding and sanitation <em>before</em> being sent to the DB
+    |   <em>Independently researches the risks associated with and methods of malicious SQL Injection</em></p>
+<p><em>Buildo Baggins</em>:
+    |   Gets input from all other team members in terms of what build tasks (<em>Grunt</em> build tasks, if we are using <em>Assembly.io</em>) they need to be effective in their roles.
+    |   Creates customized <em>Grunt</em> tasks for members as well as a master build task, a development build task
+    |   Creates and maintains some sort of <code>server</code> task both for <code>dist</code> and <code>dev</code> - while <code>dev</code> is most likely a <code>localhost</code> server spun up in <em>Browser Sync</em> or <em>Express</em>, <code>dist</code> would likely post data to <em>Heroku</em> or a similar hosting platform.
+    |   Maintains <code>package.json</code> and other package files (e.g. <code>bower.json</code>) that we use to ensure they are up-to-date
+    |   Regularly tests <code>grunt</code> tasks to ensure efficient operation and acting when necessary to speed up bottlenecks (e.g. using <code>options{respawn: false}</code> where appropriate)</p>
+<hr>
+<p><em>Gittin\</em>***<em>:
+    |   A role everyone needs to adopt: &quot;gitting&quot; good at <em>Git</em>.
+    |   Download <em>Sourcetree</em> by <em>Atlassian</em> (Mac or Windows)
+    |   Realize that the <code>master</code> branch </em>isn&#39;t what you should be working on<em>
+    |   Realize that if you add a bunch of new files and make some serious changes to some <em>AngularJS</em> code, you should </em>commit them separately<em>
+    |   Realize that the <em>second</em> you make progress on a specific task, </em>commit it and give it a short but meaningful message.<em> We can all read everyone&#39;s Git commit messages.
+    |   Don&#39;t be afraid to tag your updates if you consider them significant. |   The </em>general rule<em> for version tagging is if you have </em>v0.1.0<em> - you have </em>zero epochal/critical changes<em> (like alpha release candidate reached or major breaking changes to older versions), you have </em>one major change<em> (like successfully connecting an <em>Angular</em> <code>service</code> to a new API, and </em>zero minor changes* (like changing from <em>HTML</em> tags with <code>data-attributes</code> to customer <em>Angular</em> <code>directive</code>s)</p>
+
+
+
+
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

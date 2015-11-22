@@ -25,7 +25,7 @@ module.exports = function(grunt) {
 
     config: {
       src: 'src',
-      dist: '../'
+      dist: '.'
     },
 
     watch: {
