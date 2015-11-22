@@ -25,7 +25,7 @@ module.exports = function(grunt) {
 
     config: {
       src: 'src',
-      dist: 'dist'
+      dist: '../'
     },
 
     watch: {
@@ -96,7 +96,12 @@ module.exports = function(grunt) {
 
     // Before generating any new files,
     // remove any previously-created files.
-    clean: ['<%= config.dist %>/**/*.{html,xml}']
+    clean: {
+      options: {
+        force: true
+      },
+      dist: '<%= config.dist %>/**/*.{html,xml}'
+    }
 
   });
 
